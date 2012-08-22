@@ -1,0 +1,13 @@
+include ../../build/modules.mk
+
+UGLIFYJS = uglifyjs -nc
+MODULE = redactor
+FILENAME = ${MODULE}.js
+SOURCE_DIR = js/redactor
+SOURCE = ${SOURCE_DIR}/${MODULE}.js
+PRODUCTION = ${PRODUCTION_DIR}/${FILENAME}
+DEVELOPMENT = ${DEVELOPMENT_DIR}/${FILENAME}
+
+all:
+	${MODULARIZE} -n "${MODULE}" ${SOURCE} > ${DEVELOPMENT}
+	${UGLIFYJS} ${DEVELOPMENT} > ${PRODUCTION}
