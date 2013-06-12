@@ -1,6 +1,5 @@
 include ../../build/modules.mk
 
-UGLIFYJS 	= uglifyjs -nc
 MODULE 		= redactor
 FILENAME 	= ${MODULE}.js
 SOURCE_DIR	= js/redactor
